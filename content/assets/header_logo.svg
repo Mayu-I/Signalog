@@ -19,6 +19,6 @@
       <circle cx="24.178" cy="24.178" r="21.678" fill="none"/>
     </g>
     <path id="Path_3" data-name="Path 3" d="M196.226,286.033a32.487,32.487,0,0,1,60.387-1.373" transform="translate(-43.003 277.795)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="6"/>
-    <text id="SIGNALOG" transform="translate(113 661.355)" font-size="50" font-family="Atrament-Italic, Atrament" font-style="italic"><tspan x="0" y="0">SIGNALOG</tspan></text>
+    <text id="SIGNALOG" transform="translate(113 661.355)" font-size="50" font-family="Atrament-Italic, Atrament" font-style="italic" fill="#000"><tspan x="0" y="0">SIGNALOG</tspan></text>
   </g>
 </svg>

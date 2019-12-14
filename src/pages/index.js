@@ -17,33 +17,33 @@ class Blog extends React.Component {
             <div class="post__list">
               {posts.map(({ node }, index, array) => {
                 const title = node.frontmatter.title || node.fields.slug
-                if (index === 0) {
-                  return (
-                    <section class="post__new" key={node.fields.slug}>
-                      <Link to={`blog${node.fields.slug}`} target="_blank">
-                        <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
-                        <div class="post__info">
-                          <div class="post__time">{node.frontmatter.date}</div>
-                          <div class="post__category">ENGLISH</div>
-                        </div>
-                        <h3 class="post__title">{title}</h3>
-                      </Link>
-                    </section>
-                  )
-                } else {
-                  return (
-                    <section class="post__item" key={node.fields.slug}>
-                      <Link to={`blog${node.fields.slug}`} target="_blank">
-                        <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
-                        <div class="post__info">
-                          <div class="post__time">{node.frontmatter.date}</div>
-                          <div class="post__category">ENGLISH</div>
-                        </div>
-                        <h3 class="post__title">{title}</h3>
-                      </Link>
-                    </section>
-                  )
-                }
+                // if (index === 0) {
+                //   return (
+                //     <section class="post__new" key={node.fields.slug}>
+                //       <Link to={`blog${node.fields.slug}`} target="_blank">
+                //         <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
+                //         <div class="post__info">
+                //           <div class="post__time">{node.frontmatter.date}</div>
+                //           <div class="post__category">ENGLISH</div>
+                //         </div>
+                //         <h3 class="post__title">{title}</h3>
+                //       </Link>
+                //     </section>
+                //   )
+                // } else {
+                return (
+                  <section class="post__item" key={node.fields.slug}>
+                    <Link to={`blog${node.fields.slug}`} target="_blank">
+                      <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
+                      <div class="post__info">
+                        <div class="post__time">{node.frontmatter.date}</div>
+                        <div class="post__category">ENGLISH</div>
+                      </div>
+                      <h3 class="post__title">{title}</h3>
+                    </Link>
+                  </section>
+                )
+                // }
               })}
             </div>
           </div>
