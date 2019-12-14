@@ -57,7 +57,7 @@ class BlogPostTemplate extends React.Component {
           <li>
             {next && (
               <Link to={`blog${next.fields.slug}`} rel="next">
-                {next.frontmatter.title} →
+                {next.frontmatter.title}
               </Link>
             )}
           </li>
