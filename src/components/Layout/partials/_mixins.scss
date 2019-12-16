@@ -6,3 +6,8 @@
   @media (min-width: 769px) { @content; }
 }
 
+@mixin content-wrapper{
+  width: 740px;
+  margin-right: auto;
+  margin-left: auto; 
+}

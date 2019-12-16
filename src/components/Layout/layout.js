@@ -1,23 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 import Header from "../Header/header"
+import Footer from "../Footer/footer"
 import "./layout.scss"
 
-class Layout extends React.Component {
-  render() {
-    // const { location, title, children } = this.props
 
-    return (
-      <div>
-        <Header />
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-        </footer>
-      </div>
-    )
-  }
+
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </div>
+  )
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
 export default Layout

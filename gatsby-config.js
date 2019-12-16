@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    // edit below
-    title: `Signalog`,
+    title: `Singnalog`,
     author: `Mayu Imanaka`,
-    description: `My Blog`,
+    description: `My blog`,
+    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `cukio`,
+      twitter: `mayuimanaka`,
     },
   },
   plugins: [
@@ -53,6 +53,9 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              maxWidth: 1080,
+            },
           },
           {
             resolve: `gatsby-remark-smartypants`,
@@ -70,20 +73,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Siganlog`,
-        short_name: `GatsbyJS`,
+        name: `Signalog`,
+        short_name: `Signalog`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#0F1210`,
         display: `minimal-ui`,
-        // edit below
         icon: `content/assets/gatsby-icon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],

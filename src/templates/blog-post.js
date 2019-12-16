@@ -2,10 +2,11 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import Layout from "../components/Layout/layout"
+import Img from "gatsby-image"
+import before from '../../content/assets/post__before.png'
+import after from '../../content/assets/post__after.png'
+
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
+<<<<<<< HEAD
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -62,6 +64,37 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+=======
+        <div className="post">
+          <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
+          <div className="post__info">
+            <p className="post__date">{post.frontmatter.date}</p>
+            <div className="post__tag">ENGLISH</div>
+          </div>
+          <h1 className="post__title">{post.frontmatter.title}
+          </h1>
+          <div className="post__content">
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </div>
+          <ul className="post__index">
+            <li className="post__indexItem">
+              {previous && (
+                <Link to={`blog${previous.fields.slug}`} rel="prev">
+                  <img src={before} />{previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li className="post__indexItem">
+              {next && (
+                <Link to={`blog${next.fields.slug}`} rel="next">
+                  {next.frontmatter.title}
+                  <img src={after} />
+                </Link>
+              )}
+            </li>
+          </ul>
+        </div>
+>>>>>>> develop
       </Layout>
     )
   }
@@ -79,12 +112,19 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
+      excerpt(pruneLength: 130)
       body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY/MM/DD")
         description
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 740) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
