@@ -23,7 +23,7 @@ class Blog extends React.Component {
                       <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
                       <div class="posts__info">
                         <div class="posts__time">{node.frontmatter.date}</div>
-                        <div class="posts__tag">ENGLISH</div>
+                        <div class="posts__tag">{node.frontmatter.tags}</div>
                       </div>
                       <h3 class="posts__title">{title}</h3>
                     </Link>
@@ -58,6 +58,7 @@ export const pageQuery = graphql`
           date(formatString: "YYYY/MM/DD")
           title
           description
+          tags
           thumbnail {
             childImageSharp {
               fluid(maxWidth: 500) {

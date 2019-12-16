@@ -1,0 +1,16 @@
+
+#signal-yellow circle:nth-of-type(2){
+    fill:#ff5f68;
+    animation: flash 2s ease-in-out 1;
+}
+
+
+@keyframes flash {
+    0%,100% {
+        fill:#ff5f68;
+    }
+  
+    50% {
+        fill:#fff;
+    }
+  }

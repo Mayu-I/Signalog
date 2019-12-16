@@ -1,9 +1,9 @@
 import React from "react";
 // import { Link } from "gatsby";
 
-import linkedin from '../../../content/assets/icon__linkedin.png'
-import twitter from '../../../content/assets/icon__twitter.png'
-import instagram from '../../../content/assets/icon__instagram.png'
+import linkedin from '../../../content/assets/icon_linkedin.png'
+import twitter from '../../../content/assets/icon_twitter.png'
+import instagram from '../../../content/assets/icon_instagram.png'
 
 
 const Footer = () => (

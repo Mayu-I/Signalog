@@ -4,8 +4,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/Layout/layout"
 import Img from "gatsby-image"
-import before from '../../content/assets/post__before.png'
-import after from '../../content/assets/post__after.png'
+import before from '../../content/assets/post_before.png'
+import after from '../../content/assets/post_after.png'
 
 
 class BlogPostTemplate extends React.Component {
@@ -16,60 +16,11 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-<<<<<<< HEAD
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <MDXRenderer>{post.body}</MDXRenderer>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={`blog${previous.fields.slug}`} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={`blog${next.fields.slug}`} rel="next">
-                {next.frontmatter.title}
-              </Link>
-            )}
-          </li>
-        </ul>
-=======
         <div className="post">
           <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
           <div className="post__info">
             <p className="post__date">{post.frontmatter.date}</p>
-            <div className="post__tag">ENGLISH</div>
+            <div className="post__tag">{post.frontmatter.tags}</div>
           </div>
           <h1 className="post__title">{post.frontmatter.title}
           </h1>
@@ -94,7 +45,6 @@ class BlogPostTemplate extends React.Component {
             </li>
           </ul>
         </div>
->>>>>>> develop
       </Layout>
     )
   }
@@ -118,6 +68,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY/MM/DD")
         description
+        tags
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 740) {
