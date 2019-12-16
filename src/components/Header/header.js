@@ -10,7 +10,7 @@ const Header = () => (
       <ul className="header__gnavList">
         <li className="header__gnavItem"><a href="" target="_blank">WEB</a></li>
         <li className="header__gnavItem"><a href="" target="_blank">TV/MOVIE</a></li>
-        <div className="header__logo"><Link to="/"><img src={logo} alt="SIGNALOG"></img></Link></div>
+        <div className="header__logo"><Link to="/"><img src={logo} alt="SIGNALOG" /></Link></div>
         <li className="header__gnavItem"><a href="" target="_blank">LIFE</a></li>
         <li className="header__gnavItem"><a href="" target="_blank">ENGLISH</a></li>
       </ul>
@@ -18,4 +18,4 @@ const Header = () => (
   </header>
 )
 
-export default Header
+export default Header;

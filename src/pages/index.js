@@ -13,33 +13,19 @@ class Blog extends React.Component {
     return (
       <Layout location={this.props.location}>
         <main>
-          <div class="post--top post">
-            <div class="post__list">
+          <div class="posts--top posts">
+            <div class="posts__list">
               {posts.map(({ node }, index, array) => {
                 const title = node.frontmatter.title || node.fields.slug
-                // if (index === 0) {
-                //   return (
-                //     <section class="post__new" key={node.fields.slug}>
-                //       <Link to={`blog${node.fields.slug}`} target="_blank">
-                //         <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
-                //         <div class="post__info">
-                //           <div class="post__time">{node.frontmatter.date}</div>
-                //           <div class="post__category">ENGLISH</div>
-                //         </div>
-                //         <h3 class="post__title">{title}</h3>
-                //       </Link>
-                //     </section>
-                //   )
-                // } else {
                 return (
-                  <section class="post__item" key={node.fields.slug}>
+                  <section class="posts__item" key={node.fields.slug}>
                     <Link to={`blog${node.fields.slug}`} target="_blank">
                       <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
-                      <div class="post__info">
-                        <div class="post__time">{node.frontmatter.date}</div>
-                        <div class="post__category">ENGLISH</div>
+                      <div class="posts__info">
+                        <div class="posts__time">{node.frontmatter.date}</div>
+                        <div class="posts__tag">ENGLISH</div>
                       </div>
-                      <h3 class="post__title">{title}</h3>
+                      <h3 class="posts__title">{title}</h3>
                     </Link>
                   </section>
                 )
@@ -70,7 +56,7 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY/MM/DD")
           title
           description
           thumbnail {

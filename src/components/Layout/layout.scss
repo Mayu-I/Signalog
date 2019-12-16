@@ -1,5 +1,5 @@
-@import "partials/ress.css";
 @import url("https://use.typekit.net/brj5gjh.css");
+@import "partials/ress.css";
 @import "partials/functions";
 @import "partials/variables";
 @import "partials/mixins";
@@ -33,15 +33,15 @@ ul,li{
 }
 
 h1, h2{
-    font-family: $headline-font;
+    font-family: $text-font;
 }
+
 
 .header{
     font-family: $headline-font;
     position: relative;
     font-size: 3rem;
     font-weight: 300;
-    margin-top: 20px;
     margin-bottom: 50px;
     & a{
         &:hover{
@@ -60,15 +60,14 @@ h1, h2{
     }
     &__subnav{
         position: absolute;
-        top: 0;
+        top: 10px;
         right: 60px;
     }
     &__gnav{
         font-size: 2.8rem;
         letter-spacing: 1.5px;
-        // background-color: $bg-color;
-        border-bottom: 1px solid #E6EAEA;
-        padding: 20px 0;
+        padding: 30px 0 10px;
+        box-shadow: 0px 4px 6px -3px rgba(0,0,0,0.6);
     &List{
         display: flex;
         justify-content: space-between;
@@ -78,14 +77,11 @@ h1, h2{
     }
     &Item{
         font-style: italic;
-        // & a{
-        //     color: #ffffff;
-        // }
     }
     }
 }
 
-.post__new{
+.posts__new{
     width: 740px;
     margin-right: auto;
     margin-left: auto;  
@@ -94,7 +90,7 @@ h1, h2{
     &:hover{
     transform: translateY(-3px);
     }
-    & .post{  
+    & .posts{  
         &__info{
             margin-bottom: 10px;
         }
@@ -104,15 +100,16 @@ h1, h2{
     &__time{
         font-size: 1.5rem;
     }
-    &__category{
+    &__tag{
         padding: 3px 8px;
         font-size: 1.1rem;
     }
 }
 }
 
-.post{   
-    margin-bottom: 100px;
+
+.posts{   
+    margin-bottom: 70px;
     &__info{
         display: flex;
         align-items: center;
@@ -124,11 +121,12 @@ h1, h2{
         font-size: 1.2rem;
         margin-right: 10px;
     }
-    &__category{
-        background: $green-color;
+    &__tag{
+        background: $bg-color;
         color: #ffffff;
         padding: 3px 6.5px;
         font-size: 0.7rem;
+        font-weight: 200;
     }
     &__title{
         font-weight: bold;
@@ -180,6 +178,58 @@ h1, h2{
         }
     }
 }
+
+
+.post{
+    width: 700px;
+    margin: 0 auto 70px;
+    &__info{
+        display: flex;
+        margin-top: 30px;
+    }
+    &__date{
+        font-weight: 500;
+        color: #c0c0c0;
+        font-size: 1.6rem;
+        margin-right: 10px;
+    }
+    &__tag{
+        background: $bg-color;
+        color: #ffffff;
+        padding: 5px 7.5px 4px;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    &__title{
+        margin-bottom: 30px;
+    }
+    &__content{
+        margin-bottom: 50px;
+        h2{
+            margin: 10px 0;
+        }
+        pre{
+            margin: 10px 0;
+        }
+        p{
+            line-height: 1.8;
+        }
+    }
+    &__index{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        &Item{
+            font-size: 2.5rem;
+            font-family: $headline-font;
+        }
+        img{
+            width: 23px;
+            padding: 0 5px;
+        }
+    }
+}
+
 
 .footer{
     &__wrapper{
