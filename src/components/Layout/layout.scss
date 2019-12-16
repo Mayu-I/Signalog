@@ -67,13 +67,13 @@ h1, h2{
         font-size: 2.8rem;
         letter-spacing: 1.5px;
         padding: 30px 0 10px;
-        box-shadow: 0px 4px 6px -3px rgba(0,0,0,0.6);
+        
+        box-shadow: 0 10px 20px -5px rgba(0,0,0,.2);
     &List{
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        width: 740px;
-        margin: 0 auto;
+        @include content-wrapper;
     }
     &Item{
         font-style: italic;
@@ -82,9 +82,7 @@ h1, h2{
 }
 
 .posts__new{
-    width: 740px;
-    margin-right: auto;
-    margin-left: auto;  
+    @include content-wrapper;
     margin-bottom: 50px;
     transition: 0.4s;
     &:hover{
@@ -181,8 +179,8 @@ h1, h2{
 
 
 .post{
-    width: 700px;
-    margin: 0 auto 70px;
+    @include content-wrapper;
+    margin-bottom: 70px;
     &__info{
         display: flex;
         margin-top: 30px;
