@@ -5,7 +5,7 @@ import Layout from "../components/Layout/layout"
 import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
     const { tag } = pageContext
-    const { edges, totalCount } = data.allMarkdownRemark
+    const { edges, totalCount } = data.allMdx
     const tagHeader = `${totalCount} post${
         totalCount === 1 ? "" : "s"
         } tagged with "${tag}"`
@@ -33,7 +33,7 @@ Tags.propTypes = {
         tag: PropTypes.string.isRequired,
     }),
     data: PropTypes.shape({
-        allMarkdownRemark: PropTypes.shape({
+        allMdx: PropTypes.shape({
             totalCount: PropTypes.number.isRequired,
             edges: PropTypes.arrayOf(
                 PropTypes.shape({

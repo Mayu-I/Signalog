@@ -5,7 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const tagTemplate = path.resolve("src/templates/tags.js")
+  const tagTemplate = path.resolve(`src/templates/tags.js`)
   return graphql(
     `
       {
@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-        tagsGroup: allMarkdownRemark(limit: 2000) {
+        tagsGroup: allMdx(limit: 2000) {
           group(field: frontmatter___tags) {
             fieldValue
           }
@@ -58,14 +58,14 @@ exports.createPages = ({ graphql, actions }) => {
     const tags = result.data.tagsGroup.group
     tags.forEach(tag => {
       createPage({
-        path: `/tags/${_.kebaCase(tag.fieldValue)}/`,
+        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
         component: tagTemplate,
         context: {
           tag: tag.fieldValue,
         },
       })
     })
-    return null
+    // return  null
   })
 }
 

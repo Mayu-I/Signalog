@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 
 import linkedin from '../../../content/assets/icon__linkedin.png'
 import twitter from '../../../content/assets/icon__twitter.png'
