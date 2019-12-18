@@ -3,7 +3,7 @@ module.exports = {
     title: `Singnalog`,
     author: `Mayu Imanaka`,
     description: `My blog`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://signalog.org/`,
     social: {
       twitter: `mayuimanaka`,
     },
