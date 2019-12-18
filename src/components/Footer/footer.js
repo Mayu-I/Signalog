@@ -4,6 +4,7 @@ import React from "react";
 import linkedin from '../../../content/assets/icon_linkedin.png'
 import twitter from '../../../content/assets/icon_twitter.png'
 import instagram from '../../../content/assets/icon_instagram.png'
+import git from '../../../content/assets/icon_git.png'
 
 
 const Footer = () => (
@@ -21,7 +22,7 @@ const Footer = () => (
                     <li className="footer__navItem--forrow"><a href="" target="_blank" rel="noopener noreferrer"><img src={twitter}
                         alt="" /></a>
                     </li>
-                    <li className="footer__navItem--forrow"><a href="" target="_blank" rel="noopener noreferrer"><img src="images/footer__git.png"
+                    <li className="footer__navItem--forrow"><a href="" target="_blank" rel="noopener noreferrer"><img src={git}
                         alt="" /></a></li>
                 </ul>
             </nav>
