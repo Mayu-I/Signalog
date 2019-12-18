@@ -7,14 +7,13 @@ import Img from "gatsby-image"
 class Blog extends React.Component {
   render() {
     const { data } = this.props
-    // const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
 
     return (
       <Layout location={this.props.location}>
         <div className="posts--top posts">
           <div className="posts__list">
-            {posts.map(({ node }, index, array) => {
+            {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
                 <section className="posts__item" key={node.fields.slug}>
@@ -28,7 +27,6 @@ class Blog extends React.Component {
                   </Link>
                 </section>
               )
-              // }
             })}
           </div>
         </div>

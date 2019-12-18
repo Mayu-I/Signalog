@@ -1,29 +1,35 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Layout from "../components/Layout/layout"
+import Img from "gatsby-image"
+
 
 import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
     const { tag } = pageContext
-    const { edges, totalCount } = data.allMdx
-    const tagHeader = `${totalCount} post${
-        totalCount === 1 ? "" : "s"
-        } tagged with "${tag}"`
+    const { edges } = data.allMdx
     return (
         <Layout>
-            <h1>{tagHeader}</h1>
-            <ul>
-                {edges.map(({ node }) => {
-                    const { slug } = node.fields
-                    const { title } = node.frontmatter
-                    return (
-                        <li key={slug}>
-                            <Link to={slug}>{title}</Link>
-                        </li>
-                    )
-                })}
-            </ul>
-            <Link to="/tags">All tags</Link>
+            <h1 className="page-title category__title">{tag}</h1>
+            <div className="posts">
+                <div className="posts__list">
+                    {edges.map(({ node }) => {
+                        const { slug } = node.fields
+                        return (
+                            <section className="posts__item" key={slug}>
+                                <Link to={`blog${slug}`} target="_blank">
+                                    <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
+                                    <div className="posts__info">
+                                        <div className="posts__time">{node.frontmatter.date}</div>
+                                        <div className="posts__tag">{node.frontmatter.tags}</div>
+                                    </div>
+                                    <h3 className="posts__title">{node.frontmatter.title}</h3>
+                                </Link>
+                            </section>
+                        )
+                    })}
+                </div>
+            </div>
         </Layout>
     )
 }
@@ -40,6 +46,9 @@ Tags.propTypes = {
                     node: PropTypes.shape({
                         frontmatter: PropTypes.shape({
                             title: PropTypes.string.isRequired,
+                            tags: PropTypes.string.isRequired,
+                            description: PropTypes.string.isRequired,
+                            description: PropTypes.string.isRequired,
                         }),
                         fields: PropTypes.shape({
                             slug: PropTypes.string.isRequired,
@@ -66,7 +75,17 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            date(formatString: "YYYY/MM/DD")
             title
+            description
+            tags
+            thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           }
         }
       }

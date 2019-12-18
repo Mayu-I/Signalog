@@ -9,10 +9,10 @@ const Header = () => (
     <nav className="header__gnav">
       <ul className="header__gnavList">
         <li className="header__gnavItem"><a href="/web">WEB</a></li>
-        <li className="header__gnavItem"><a href="/tv-movie">TV/MOVIE</a></li>
+        <li className="header__gnavItem"><a href="/english">ENGLISH</a></li>
         <div className="header__logo"><Link to="/"><Logo /></Link></div>
         <li className="header__gnavItem"><a href="/life">LIFE</a></li>
-        <li className="header__gnavItem"><a href="/english">ENGLISH</a></li>
+        <li className="header__gnavItem"><a href="/tv-movie">TV/MOVIE</a></li>
       </ul>
     </nav>
   </header>
