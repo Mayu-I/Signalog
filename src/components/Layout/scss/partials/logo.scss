@@ -1,21 +1,21 @@
 
 #signal-red circle:nth-of-type(2){
     fill:#fff;
-    animation: red 1s linear 1s;
+    animation: red 1s linear 2s;
 }
 
 #signal-yellow circle:nth-of-type(2){
     fill:#fff;
-    animation: yellow 1s linear;
+    animation: yellow 1s linear 1s;
 }
 
 #signal-green circle:nth-of-type(2){
     fill:#fff;
-    animation: green 2s linear 2s forwards;
+    animation: green 2s linear 3s forwards;
 }
 
 #signal-name{
-    animation: lineAndFill 2.5s ease-out 3s forwards;   
+    animation: lineAndFill 2.5s ease-out 4s forwards;   
     fill:transparent;
     stroke: transparent;
     stroke-dasharray: 220;
