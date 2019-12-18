@@ -13,19 +13,19 @@ class Blog extends React.Component {
     return (
       <Layout location={this.props.location}>
         <main>
-          <div class="posts--top posts">
-            <div class="posts__list">
+          <div className="posts--top posts">
+            <div className="posts__list">
               {posts.map(({ node }, index, array) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
-                  <section class="posts__item" key={node.fields.slug}>
+                  <section className="posts__item" key={node.fields.slug}>
                     <Link to={`blog${node.fields.slug}`} target="_blank">
                       <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
-                      <div class="posts__info">
-                        <div class="posts__time">{node.frontmatter.date}</div>
-                        <div class="posts__tag">{node.frontmatter.tags}</div>
+                      <div className="posts__info">
+                        <div className="posts__time">{node.frontmatter.date}</div>
+                        <div className="posts__tag">{node.frontmatter.tags}</div>
                       </div>
-                      <h3 class="posts__title">{title}</h3>
+                      <h3 className="posts__title">{title}</h3>
                     </Link>
                   </section>
                 )

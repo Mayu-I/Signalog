@@ -1,16 +1,77 @@
 
-#signal-yellow circle:nth-of-type(2){
-    fill:#ff5f68;
-    animation: flash 2s ease-in-out 1;
+#signal-red circle:nth-of-type(2){
+    fill:#fff;
+    animation: red 1s linear 1s;
 }
 
+#signal-yellow circle:nth-of-type(2){
+    fill:#fff;
+    animation: yellow 1s linear;
+}
 
-@keyframes flash {
-    0%,100% {
-        fill:#ff5f68;
+#signal-green circle:nth-of-type(2){
+    fill:#fff;
+    animation: green 2s linear 2s forwards;
+}
+
+#signal-name{
+    animation: lineAndFill 2.5s ease-out 3s forwards;   
+    fill:transparent;
+    stroke: transparent;
+    stroke-dasharray: 220;
+    stroke-width: 1;
+}
+
+@keyframes lineAndFill {
+    0% {
+        stroke: #2f2f2f;
+      stroke-dashoffset: 200;
     }
-  
-    50% {
-        fill:#fff;
+    80% {
+      stroke-dashoffset: 0;
+    //   fill: transparent;
+    }
+    100% {
+      fill: #2f2f2f;
     }
   }
+
+// @keyframes fadeIn {
+//     0% {opacity: 0}
+//     100% {opacity: 1}
+// }
+
+
+@keyframes red {
+    0%{
+        fill:#fff;
+    }
+    1%,99% {
+        fill:#FF5F68;
+    }
+    100%{
+        fill: #fff;
+    }
+  }
+
+@keyframes yellow {
+    0%{
+        fill:#fff;
+    }
+    1%,99% {
+        fill:#f2d589;
+    }
+    100%{
+    fill: #fff;
+    }
+  }
+
+
+@keyframes green{
+    0%{
+        fill:#fff;
+    }
+    1%,100%{
+        fill:#00a99d;
+    }
+}

@@ -11,7 +11,7 @@ const Footer = () => (
         <div className="footer__wrapper">
             <nav className="footer__nav">
                 <ul className="footer__navList">
-                    <li className="footer__navItem"><a href="" target="_blank">ABOUT</a></li>
+                    <li className="footer__navItem"><a href="/about">ABOUT</a></li>
                     <li className="footer__navItem--forrow"><a href="" target="_blank"><img
                         src={linkedin} alt="" /></a>
                     </li>

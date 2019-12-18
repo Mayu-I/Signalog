@@ -43,6 +43,7 @@ h1, h2{
     font-size: 3rem;
     font-weight: 300;
     margin-bottom: 50px;
+    box-shadow: 0 5px 20px -5px rgba(0,0,0,.2);
     & a{
         &:hover{
         color: $green-color!important;
@@ -55,22 +56,22 @@ h1, h2{
         text-align: center;
         display: block;
         svg{
+            vertical-align: bottom;
             width: 60px;
             height:auto;
         }
     }
     &__subnav{
         position: absolute;
-        top: 10px;
+        
+        top: 0;
         right: 60px;
     }
     &__gnav{
-        font-size: 2.8rem;
+        font-size: 2.4rem;
         letter-spacing: 1.5px;
         padding: 30px 0 10px;
-        
-        box-shadow: 0 10px 20px -5px rgba(0,0,0,.2);
-    &List{
+            &List{
         display: flex;
         justify-content: space-between;
         align-items: baseline;
