@@ -31,7 +31,7 @@ class BlogPostTemplate extends React.Component {
             <li className="post__indexItem">
               {previous && (
                 <Link to={`blog${previous.fields.slug}`} rel="prev">
-                  <img src={before} />{previous.frontmatter.title}
+                  <img src={before} alt="next" />{previous.frontmatter.title}
                 </Link>
               )}
             </li>
@@ -39,7 +39,7 @@ class BlogPostTemplate extends React.Component {
               {next && (
                 <Link to={`blog${next.fields.slug}`} rel="next">
                   {next.frontmatter.title}
-                  <img src={after} />
+                  <img src={after} alt="after" />
                 </Link>
               )}
             </li>
