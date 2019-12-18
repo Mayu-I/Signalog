@@ -1,17 +1,17 @@
 
 #signal-red circle:nth-of-type(2){
     fill:#fff;
-    animation: red 1s linear 2s;
+    animation: red-signal 1s linear 2s;
 }
 
 #signal-yellow circle:nth-of-type(2){
     fill:#fff;
-    animation: yellow 1s linear 1s;
+    animation: yellow-signal 1s linear 1s;
 }
 
 #signal-green circle:nth-of-type(2){
     fill:#fff;
-    animation: green 2s linear 3s forwards;
+    animation: green-signal 2s linear 3s forwards;
 }
 
 #signal-name{
@@ -42,7 +42,7 @@
 // }
 
 
-@keyframes red {
+@keyframes red-signal {
     0%{
         fill:#fff;
     }
@@ -54,7 +54,7 @@
     }
   }
 
-@keyframes yellow {
+@keyframes yellow-signal {
     0%{
         fill:#fff;
     }
@@ -67,7 +67,7 @@
   }
 
 
-@keyframes green{
+@keyframes green-signal{
     0%{
         fill:#fff;
     }
