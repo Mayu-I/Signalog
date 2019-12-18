@@ -77,7 +77,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#0F1210`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/signalog_icon.png`,
       },
     },
   ],
