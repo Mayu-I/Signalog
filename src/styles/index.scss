@@ -126,20 +126,23 @@ h1, h2{
 .bm-burger-bars-hover {
     background: #2f2f2f;
 }
-  
+
   .bm-cross-button {
     height: 26px;
     width: 26px;
   }
-  
+
   .bm-cross {
     background: #bdc3c7;
   }
-  
+
   .bm-menu-wrap {
     position: fixed;
     height: 100%;
     top: 0;
+    @include sp{
+        width: 50%!important;
+    }
   }
   
 
@@ -149,25 +152,22 @@ h1, h2{
     font-size: 2.5rem;
   }
   
-  /* Morph shape necessary with bubble or elastic */
   .bm-morph-shape {
     fill: #fff;
   }
-  
-  /* Wrapper for item list */
+
   .bm-item-list {
     color: #b8b7ad;
     padding: 0.8em;
   }
-  
-  /* Individual item */
+
   .bm-item {
     display: inline-block;
   }
-  
-  /* Styling of overlay */
+
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+    top: 0;
   }
 
 
@@ -237,7 +237,7 @@ h1, h2{
             width: 47%;
         }
         @include sp{
-            width: 90%;
+            width: 100%;
         }
         &:hover{
         transform: translateY(-2px);
@@ -358,9 +358,6 @@ h1, h2{
 }
 p{
     text-align: left;
-    @include spandtb{
-        @include content-wrapper--sp;
-    }
 }
 }
 
@@ -372,9 +369,12 @@ p{
         color: #ffffff;
         font-family: $headline-font;
         font-weight: 300;  
-        @include tb{
+        @include spandtb{
             padding: 40px 0 20px;
         }  
+        @include sp{
+
+        }
     }
     &__nav{
         &List{
@@ -384,13 +384,20 @@ p{
             width: 350px;
             justify-content: space-between;
             align-items: center;
-            @include spandtb{
+            @include tb{
+                width: 250px;
                 margin-left: 50px;
+            }
+            @include sp{
+                width: 80%;
+                margin-left: 20px;
+                margin-bottom: 10px;
             }
         }
         &Item{
             & a{
                 color: #ffffff;
+                font-size: 2.3rem;
                 &:hover{
                     color: $green-color!important;
                 }
@@ -398,6 +405,9 @@ p{
         }
         &Item--forrow{
             width: 25px;
+            @include sp{
+                width: 20px;
+            }
         }
     }
     &__copy{
@@ -405,5 +415,9 @@ p{
         text-align: right;
         margin-right: 40px;
         color: #bcbcbc;
+        @include sp{
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
     }
 }
