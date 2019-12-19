@@ -1,9 +1,23 @@
-@mixin for-sp {
-  @media (max-width: 768px) { @content; }
+$sp: 415px; 
+$tb: 760px;
+$pc: 980px; 
+
+@mixin sp {
+  @media (max-width: $sp) {
+    @content;
+  }
 }
 
-@mixin for-pc {
-  @media (min-width: 769px) { @content; }
+@mixin tb {
+  @media (min-width: $sp) and (max-width: $pc) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: $pc) {
+    @content;
+  }
 }
 
 @mixin content-wrapper{

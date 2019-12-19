@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import Logo from '../Logo/logo'
+import Logo from '../Logo/logo';
+import Burger from './burger'
 
 const Header = () => (
   <header className="header">
+    <div className="header__logo header__logo--sp"><Link to="/"><Logo /></Link></div>
+    <Burger />
     <Link to="/about" className="header__subnav">ABOUT</Link>
     <nav className="header__gnav">
       <ul className="header__gnavList">
