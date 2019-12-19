@@ -1,4 +1,7 @@
+@import url("https://use.typekit.net/brj5gjh.css");
+
 @import "./mixins";
+@import "./variables";
 
 #signal-red circle:nth-of-type(2){
     fill:#fff;
@@ -21,6 +24,10 @@
     stroke: transparent;
     stroke-dasharray: 220;
     stroke-width: 1;
+    font-family: $headline-font;
+    font-style: italic;
+    transform:translate(113 661.355);
+    font-size:5.4rem; 
 }
 
 @keyframes lineAndFill {
@@ -30,7 +37,6 @@
     }
     80% {
       stroke-dashoffset: 0;
-    //   fill: transparent;
     }
     100% {
       fill: #2f2f2f;

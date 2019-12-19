@@ -48,6 +48,10 @@ h1, h2{
     width: 100%;
     box-shadow: 0 5px 20px -5px rgba(0,0,0,.2);
     padding: 15px 0;
+    @include spandtb{
+        position: fixed;
+        z-index: 9999;
+    }
     & a{
         &:hover{
         color: $green-color!important;
@@ -68,6 +72,9 @@ h1, h2{
             vertical-align: bottom;
             width: 50px;
             height:auto;
+            @include sp{
+                width: 40px;
+            }
         }
     }
     &__subnav{
@@ -117,10 +124,18 @@ h1, h2{
     @include pc{    
         display: none;
     }
+    @include sp{
+        width: 34px;
+        height: 28px;
+        top: 44px;
+        left: 27px;
+    }
   }
 
 .bm-burger-bars {
     background: #2f2f2f;
+    border-radius: 30px;
+    height: 4px!important;
 }
   
 .bm-burger-bars-hover {
@@ -145,7 +160,6 @@ h1, h2{
     }
   }
   
-
   .bm-menu {
     background: #fff;
     padding: 2.5em 0;
@@ -170,6 +184,10 @@ h1, h2{
     top: 0;
   }
 
+  .main{
+      padding-top: 140px;
+  }
+
 
 .page{
     &-title{
@@ -182,6 +200,9 @@ h1, h2{
         text-align: center;
         margin-bottom: 30px;
         text-transform: uppercase;
+        @include sp{
+            font-size: 3rem;
+        }
     }
 }
 
@@ -373,7 +394,7 @@ p{
             padding: 40px 0 20px;
         }  
         @include sp{
-
+            padding: 20px 0 10px;
         }
     }
     &__nav{
@@ -389,8 +410,9 @@ p{
                 margin-left: 50px;
             }
             @include sp{
-                width: 80%;
-                margin-left: 20px;
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
                 margin-bottom: 10px;
             }
         }
