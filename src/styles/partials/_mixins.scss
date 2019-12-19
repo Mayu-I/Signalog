@@ -20,8 +20,20 @@ $pc: 980px;
   }
 }
 
+@mixin spandtb {
+  @media (max-width: $pc) {
+    @content;
+  }
+}
+
 @mixin content-wrapper{
   width: 740px;
   margin-right: auto;
   margin-left: auto; 
 }
+
+@mixin content-wrapper--sp{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto; 
+} 

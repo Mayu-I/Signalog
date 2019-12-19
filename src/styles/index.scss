@@ -4,7 +4,6 @@
 @import "partials/variables";
 @import "partials/mixins";
 @import "partials/logo";
-@import "partials/hamburgers.css";
 
 html{
     font-family: $text-font;
@@ -45,10 +44,10 @@ h1, h2{
     background: #ffffff;
     font-size: 3rem;
     font-weight: 300;
-    margin-bottom: 50px;
-    z-index: 99;
+    margin-bottom: 60px;
     width: 100%;
     box-shadow: 0 5px 20px -5px rgba(0,0,0,.2);
+    padding: 15px 0;
     & a{
         &:hover{
         color: $green-color!important;
@@ -74,9 +73,13 @@ h1, h2{
     &__subnav{
         position: absolute;
         font-size: 2.5rem;
-        top: 0;
+        top: 5px;
         right: 60px;
         letter-spacing: 1px;
+        display: none;
+        @include pc{
+            display: block;
+        }
     }
     &__gnav{
         display: none;
@@ -91,19 +94,82 @@ h1, h2{
         justify-content: space-between;
         align-items: baseline;
         @include content-wrapper;
+        @include spandtb{
+                    @include content-wrapper--sp;
+                }
     }
     &Item{
         font-style: italic;
+        a{
+            outline:none;
+        }
     }
     }
 }
 
-.bm-burger-button{
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 46px;
     display: block;
-    @include pc{
+    @include pc{    
         display: none;
     }
+  }
+
+.bm-burger-bars {
+    background: #2f2f2f;
 }
+  
+.bm-burger-bars-hover {
+    background: #2f2f2f;
+}
+  
+  .bm-cross-button {
+    height: 26px;
+    width: 26px;
+  }
+  
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+    top: 0;
+  }
+  
+
+  .bm-menu {
+    background: #fff;
+    padding: 2.5em 0;
+    font-size: 2.5rem;
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #fff;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+  
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
 
 .page{
     &-title{
@@ -122,6 +188,9 @@ h1, h2{
 
 .posts{   
     margin-bottom: 70px;
+    @include spandtb{
+        margin: 0 20px 70px;
+    }
     &__info{
         display: flex;
         align-items: center;
@@ -153,11 +222,23 @@ h1, h2{
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 50px;
+        @include spandtb{
+            @include content-wrapper--sp;
+        }
+        @include sp{
+            justify-content: center;
+        }
     }
     &__item{    
         width: 31%;
         margin-bottom: 50px;
         transition: 0.4s;
+        @include tb{
+            width: 47%;
+        }
+        @include sp{
+            width: 90%;
+        }
         &:hover{
         transform: translateY(-2px);
     }
@@ -196,6 +277,9 @@ h1, h2{
 .post{
     @include content-wrapper;
     margin-bottom: 70px;
+    @include spandtb{
+        @include content-wrapper--sp;
+    }
     &__info{
         display: flex;
         margin-top: 30px;
@@ -245,6 +329,9 @@ h1, h2{
     @include content-wrapper;
     margin-bottom: 50px;
     text-align: center;
+    @include spandtb{
+        @include content-wrapper--sp;
+    }
 &__profile{
     &Img{
     width: 120px;
@@ -265,15 +352,15 @@ h1, h2{
     line-height: 1.5;
 }
 &__desc{
-    margin-bottom: 40px;
-    padding-bottom: 40px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
     border-bottom: 1px solid #dddddd;
 }
 p{
     text-align: left;
-    width: 550px;
-    margin-right: auto;
-    margin-left: auto;
+    @include spandtb{
+        @include content-wrapper--sp;
+    }
 }
 }
 
@@ -284,7 +371,10 @@ p{
         padding: 60px 0 40px;
         color: #ffffff;
         font-family: $headline-font;
-        font-weight: 300;    
+        font-weight: 300;  
+        @include tb{
+            padding: 40px 0 20px;
+        }  
     }
     &__nav{
         &List{
@@ -294,6 +384,9 @@ p{
             width: 350px;
             justify-content: space-between;
             align-items: center;
+            @include spandtb{
+                margin-left: 50px;
+            }
         }
         &Item{
             & a{

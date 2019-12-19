@@ -1,21 +1,21 @@
 
 #signal-red circle:nth-of-type(2){
     fill:#fff;
-    animation: red-signal 1s linear 2s;
+    animation: red-signal 1s linear 1.3s;
 }
 
 #signal-yellow circle:nth-of-type(2){
     fill:#fff;
-    animation: yellow-signal 1s linear 1s;
+    animation: yellow-signal 1s linear 0.3s;
 }
 
 #signal-green circle:nth-of-type(2){
     fill:#fff;
-    animation: green-signal 2s linear 3s forwards;
+    animation: green-signal 2s linear 2.3s forwards;
 }
 
 #signal-name{
-    animation: lineAndFill 2s ease-out 4s forwards;   
+    animation: lineAndFill 2s ease-out 3.3s forwards;   
     fill:transparent;
     stroke: transparent;
     stroke-dasharray: 220;
@@ -35,11 +35,6 @@
       fill: #2f2f2f;
     }
   }
-
-// @keyframes fadeIn {
-//     0% {opacity: 0}
-//     100% {opacity: 1}
-// }
 
 
 @keyframes red-signal {
