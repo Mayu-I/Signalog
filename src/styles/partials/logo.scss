@@ -27,7 +27,8 @@
     font-family: $headline-font;
     font-style: italic;
     transform:translate(113 661.355);
-    @include sp{
+    font-size: 4.8rem;
+    @include spandtb{
     font-size:5.4rem; 
 }
 }
