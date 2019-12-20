@@ -40,6 +40,10 @@ h1, h2{
     font-family: $text-font;
 }
 
+*:focus {
+    outline: none;
+  }
+
 
 .header{
     font-family: $headline-font;
