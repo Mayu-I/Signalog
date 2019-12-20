@@ -14,6 +14,9 @@ html{
 
 body{
     font-size: 1.6rem;
+    @include sp{
+        font-size: 1.5rem;
+    }
 }
 
 img{
@@ -47,10 +50,10 @@ h1, h2{
     margin-bottom: 60px;
     width: 100%;
     box-shadow: 0 5px 20px -5px rgba(0,0,0,.2);
-    padding: 15px 0;
+    padding: 10px 0;
     @include spandtb{
         position: fixed;
-        z-index: 9999;
+        z-index: 99;
     }
     & a{
         &:hover{
@@ -127,7 +130,7 @@ h1, h2{
     @include sp{
         width: 34px;
         height: 28px;
-        top: 44px;
+        top: 38px;
         left: 27px;
     }
   }
@@ -185,7 +188,7 @@ h1, h2{
   }
 
   .main{
-      padding-top: 140px;
+      padding-top: 120px;
   }
 
 
@@ -210,7 +213,10 @@ h1, h2{
 .posts{   
     margin-bottom: 70px;
     @include spandtb{
-        margin: 0 20px 70px;
+        margin: 0 0 70px;
+    }
+    &--top{
+        margin-top: 20px;
     }
     &__info{
         display: flex;
@@ -320,11 +326,18 @@ h1, h2{
     }
     &__title{
         margin-bottom: 30px;
+        font-size: 2.7rem;
+        @include sp{
+            line-height: 0.8;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     }
     &__content{
         margin-bottom: 50px;
         h2{
-            margin: 10px 0;
+            margin: 20px 0;
+            line-height: 1.2;
         }
         pre{
             margin: 10px 0;
@@ -337,10 +350,16 @@ h1, h2{
         &Item{
             font-size: 2.5rem;
             font-family: $headline-font;
+            @include sp{
+                font-size: 2rem;
+            }
         }
         img{
             width: 23px;
             padding: 0 5px;
+            @include sp{
+                width: 20px;
+            }
         }
     }
 }
