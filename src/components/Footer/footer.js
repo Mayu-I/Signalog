@@ -13,16 +13,16 @@ const Footer = () => (
             <nav className="footer__nav">
                 <ul className="footer__navList">
                     <li className="footer__navItem"><a href="/about">ABOUT</a></li>
-                    <li className="footer__navItem--forrow"><a href="" target="_blank"><img
+                    <li className="footer__navItem--forrow"><a href="https://www.linkedin.com/in/mayu-imanaka-19a306194/" target="_blank"><img
                         src={linkedin} alt="" /></a>
                     </li>
                     <li className="footer__navItem--forrow"><a href="https://www.instagram.com/mayu_cuuuu/"
                         target="_blank" rel="noopener noreferrer"><img src={instagram} alt="" /></a>
                     </li>
-                    <li className="footer__navItem--forrow"><a href="" target="_blank" rel="noopener noreferrer"><img src={twitter}
+                    <li className="footer__navItem--forrow"><a href="https://twitter.com/cukioo_mayu" target="_blank" rel="noopener noreferrer"><img src={twitter}
                         alt="" /></a>
                     </li>
-                    <li className="footer__navItem--forrow"><a href="" target="_blank" rel="noopener noreferrer"><img src={git}
+                    <li className="footer__navItem--forrow"><a href="https://github.com/Mayu-I" target="_blank" rel="noopener noreferrer"><img src={git}
                         alt="" /></a></li>
                 </ul>
             </nav>
