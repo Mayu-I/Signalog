@@ -13,7 +13,7 @@ const Footer = () => (
             <nav className="footer__nav">
                 <ul className="footer__navList">
                     <li className="footer__navItem"><a href="/about">ABOUT</a></li>
-                    <li className="footer__navItem--forrow"><a href="https://www.linkedin.com/in/mayu-imanaka-19a306194/" target="_blank"><img
+                    <li className="footer__navItem--forrow"><a href="https://www.linkedin.com/in/mayu-imanaka-19a306194/" target="_blank" rel="noopener noreferrer"><img
                         src={linkedin} alt="" /></a>
                     </li>
                     <li className="footer__navItem--forrow"><a href="https://www.instagram.com/mayu_cuuuu/"

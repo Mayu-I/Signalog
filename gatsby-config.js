@@ -2,10 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Singnalog`,
     author: `Mayu Imanaka`,
-    description: `My blog`,
+    description: ``,
     siteUrl: `https://signalog.org/`,
     social: {
-      twitter: `mayuimanaka`,
+      twitter: `@cukioo_mayu`,
     },
   },
   plugins: [
