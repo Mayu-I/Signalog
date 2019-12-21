@@ -51,7 +51,7 @@ h1, h2{
     background: #ffffff;
     font-size: 3rem;
     font-weight: 300;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     width: 100%;
     box-shadow: 0 5px 20px -5px rgba(0,0,0,.2);
     padding: 10px 0;
@@ -359,7 +359,10 @@ h1, h2{
             line-height: 1.2;
         }
         pre{
-            margin: 10px 0;
+            margin: 20px 0;
+        }
+        img{
+            margin: 20px 0;
         }
     }
     &__index{
@@ -367,17 +370,17 @@ h1, h2{
         justify-content: space-between;
         align-items:center;
         &Item{
-            font-size: 2.5rem;
-            font-family: $headline-font;
+            font-size: 1.5rem;
+            font-family: $text-font;
             @include sp{
-                font-size: 2rem;
+                font-size: 1.2rem;
             }
         }
         img{
-            width: 23px;
+            width: 15px;
             padding: 0 5px;
             @include sp{
-                width: 20px;
+                width: 13px;
             }
         }
     }
