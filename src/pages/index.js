@@ -2,8 +2,8 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout/layout";
-import Img from "gatsby-image"
-import Seo from "../components/Seo/seo"
+import Img from "gatsby-image";
+import Seo from "../components/Seo/seo";
 
 class Blog extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class Blog extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Seo title="Index page" />
+        <Seo />
         <div className="posts--top posts">
           <div className="posts__list">
             {posts.map(({ node }) => {

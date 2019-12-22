@@ -9,14 +9,7 @@ module.exports = {
     },
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,6 +17,12 @@ module.exports = {
         name: `blog`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -82,6 +81,28 @@ module.exports = {
         icon: `content/assets/signalog_icon.png`,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 750,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-netlify-cms`,
   ],
 }
 

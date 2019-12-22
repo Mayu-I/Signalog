@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import Logo from '../Logo/logo';
-import Burger from './burger'
+import Burger from './Burger/burger'
 
 const Header = () => (
   <header className="header">

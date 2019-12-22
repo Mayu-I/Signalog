@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Layout from "../components/Layout/layout"
 import Img from "gatsby-image"
-
+import Seo from '../components/Seo/seo'
 
 import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
@@ -10,6 +10,7 @@ const Tags = ({ pageContext, data }) => {
     const { edges } = data.allMdx
     return (
         <Layout>
+            <Seo title={tag}></Seo>
             <h1 className="page-title category__title">{tag}</h1>
             <div className="posts">
                 <div className="posts__list">

@@ -7,6 +7,11 @@ exports.createPages = ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const tagTemplate = path.resolve(`./src/templates/tags.js`)
+  const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+
+  exports.onCreateNode = ({ node }) => {
+    fmImagesToRelative(node);
+  };
   return graphql(
     `
       {
