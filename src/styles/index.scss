@@ -396,6 +396,9 @@ h1, h2{
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+        @include sp{
+            width: 100%;
+        }
         &Img{
         width: 110px;
         margin-right: auto;
