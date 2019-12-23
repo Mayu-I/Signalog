@@ -12,7 +12,7 @@ class Blog extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Seo />
+        <Seo title="index" />
         <div className="posts--top posts">
           <div className="posts__list">
             {posts.map(({ node }) => {

@@ -420,13 +420,22 @@ h1, h2{
         @include content-wrapper--sp;
     }
 &__profile{
+    width: 500px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
     &Img{
-    width: 120px;
+    width: 110px;
     margin-right: auto;
     margin-left: auto;
     img{
         border-radius: 50%;
     }
+}
+&Desc{
+    text-align: left;
+    font-size: 1.3rem;
 }
 }
 &__name{
