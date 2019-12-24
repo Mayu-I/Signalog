@@ -22,17 +22,17 @@
 }
 
 
-// @include spandtb{
-//     #signal-red circle:nth-of-type(2){
-//         @include circle;
-//         fill: #fff;
-//         }
+@include spandtb{
+    #signal-red circle:nth-of-type(2){
+        @include circle;
+        fill: #fff;
+        }
         
-//         #signal-yellow circle:nth-of-type(2){
-//         @include circle;
-//         fill: #fff;
-//         }
-// }
+        #signal-yellow circle:nth-of-type(2){
+        @include circle;
+        fill: #fff;
+        }
+}
 
 
 #signal-name{
