@@ -9,6 +9,7 @@ class Burger extends React.Component {
     render() {
         return (
             <Menu className="header__burger" width={'40%'}>
+                <li className="header__gnavItem menu-item"><a href="/">HOME</a></li>
                 <li className="header__gnavItem menu-item"><a href="/web">WEB</a></li>
                 <li className="header__gnavItem menu-item"><a href="/english">ENGLISH</a></li>
                 <li className="header__gnavItem menu-item"><a href="/life">LIFE</a></li>
