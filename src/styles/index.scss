@@ -527,6 +527,7 @@ p{
 
 .not{
     @include content-wrapper;
+    margin-bottom: 50px;
     @include spandtb{
         @include content-wrapper--sp;
     }
