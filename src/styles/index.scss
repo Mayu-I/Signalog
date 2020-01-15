@@ -80,7 +80,7 @@ h1, h2{
         }
         svg{
             vertical-align: bottom;
-            width: 50px;
+            width: 45px;
             height:auto;
             @include sp{
                 width: 40px;
@@ -366,8 +366,11 @@ h1, h2{
             margin: 20px 0;
         }
         img{
-            margin: 20px 0;
+        margin: 20px 0;
         }
+        // ul{
+
+        // }
     }
     &__index{
         display: flex;
@@ -388,7 +391,7 @@ h1, h2{
             }
         }
     }
-    .about__profile{
+    .profile{
         width: 500px;
         margin-top: 40px;
         margin-right: auto;
@@ -421,7 +424,26 @@ h1, h2{
     @include spandtb{
         @include content-wrapper--sp;
     }
-&__profile{
+&__name{
+    font-family: $headline-font;
+    font-weight: 400;
+    letter-spacing: 2.2px;
+    font-size: 3.3rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+&__desc{
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #dddddd;
+}
+p{
+    text-align: left;
+}
+}
+
+.profile{
     width: 500px;
     margin-top: 40px;
     margin-right: auto;
@@ -442,24 +464,6 @@ h1, h2{
 &Desc{
     text-align: left;
     font-size: 1.3rem;
-}
-}
-&__name{
-    font-family: $headline-font;
-    font-weight: 400;
-    letter-spacing: 2.2px;
-    font-size: 3.3rem;
-    font-weight: 300;
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-&__desc{
-    margin-bottom: 60px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid #dddddd;
-}
-p{
-    text-align: left;
 }
 }
 

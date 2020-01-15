@@ -49,7 +49,6 @@ Tags.propTypes = {
                             title: PropTypes.string.isRequired,
                             tags: PropTypes.string.isRequired,
                             description: PropTypes.string.isRequired,
-                            description: PropTypes.string.isRequired,
                         }),
                         fields: PropTypes.shape({
                             slug: PropTypes.string.isRequired,
