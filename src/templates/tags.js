@@ -49,8 +49,6 @@ Tags.propTypes = {
                             title: PropTypes.string.isRequired,
                             tags: PropTypes.string.isRequired,
                             description: PropTypes.string.isRequired,
-                        }),
-                        fields: PropTypes.shape({
                             slug: PropTypes.string.isRequired,
                         }),
                     }),
@@ -71,21 +69,12 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          fields {
-            slug
-          }
           frontmatter {
             date(formatString: "YYYY/MM/DD")
             title
             description
             tags
-            thumbnail {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
+            slug
           }
         }
       }

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout/layout";
-import Img from "gatsby-image";
+// import Img from "gatsby-image";
 import Seo from "../components/Seo/seo";
 
 class Blog extends React.Component {
@@ -16,11 +16,11 @@ class Blog extends React.Component {
         <div className="posts--top posts">
           <div className="posts__list">
             {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug
+              const title = node.frontmatter.title || node.frontmatter.slug
               return (
-                <section className="posts__item" key={node.fields.slug}>
-                  <Link to={`blog${node.fields.slug}`} target="_blank">
-                    <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
+                <section className="posts__item" key={node.frontmatter.slug}>
+                  <Link to={`blog${node.frontmatter.slug}`} target="_blank">
+                    {/* <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} /> */}
                     <div className="posts__info">
                       <div className="posts__time">{node.frontmatter.date}</div>
                       <div className="posts__tag">{node.frontmatter.tags}</div>
@@ -40,33 +40,24 @@ class Blog extends React.Component {
 export default Blog
 export const pageQuery = graphql`
   query {
-          site {
-          siteMetadata {
-          title
-        }
-        }
-    allMdx(sort: {fields: [frontmatter___date], order: DESC }) {
-          edges {
-          node {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
+      edges {
+        node {
           excerpt
-          fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "YYYY/MM/DD")
-          title
-          description
-          tags
-          thumbnail {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+          frontmatter {
+            title
+            slug
+            date(formatString: "YYYY/MM/DD")
+            description
+            tags
           }
-}
-}
-}
-}
-}
+        }
+      }
+    }
+  }  
 `

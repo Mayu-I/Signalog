@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/Layout/layout"
 import Seo from '../components/Seo/seo'
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import before from '../../content/assets/post_before.png'
 import after from '../../content/assets/post_after.png'
 import Profile from "../components/Profile/profile"
@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <Seo title={post.frontmatter.title}></Seo>
         <div className="post">
-          <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
+          {/* <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} /> */}
           <div className="post__info">
             <p className="post__date">{post.frontmatter.date}</p>
             <div className="post__tag">{post.frontmatter.tags}</div>
@@ -34,14 +34,14 @@ class BlogPostTemplate extends React.Component {
           <ul className="post__index">
             <li className="post__indexItem">
               {previous && (
-                <Link to={`blog${previous.fields.slug}`} rel="prev">
+                <Link to={`blog${previous.frontmatter.slug}`} rel="prev">
                   <img src={before} alt="next" />{previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li className="post__indexItem">
               {next && (
-                <Link to={`blog${next.fields.slug}`} rel="next">
+                <Link to={`blog${next.frontmatter.slug}`} rel="next">
                   {next.frontmatter.title}
                   <img src={after} alt="after" />
                 </Link>
@@ -58,29 +58,23 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug {
     site {
       siteMetadata {
         title
         author
       }
     }
-    mdx(fields: { slug: { eq: $slug } }) {
+    mdx {
       id
       excerpt(pruneLength: 130)
       body
       frontmatter {
         title
+        slug
         date(formatString: "YYYY/MM/DD")
         description
         tags
-        thumbnail {
-          childImageSharp {
-            fluid(maxWidth: 740) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
   }
