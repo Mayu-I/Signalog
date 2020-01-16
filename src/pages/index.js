@@ -57,10 +57,15 @@ export const pageQuery = graphql`
             tags
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+                fluid (maxWidth:500, quality:50){
+                    src
+                    srcSet
+                    aspectRatio
+                    sizes
+                    base64
+                  }
+            }
+              publicURL
             }
           }
         }

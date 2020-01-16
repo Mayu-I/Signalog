@@ -75,6 +75,18 @@ export const pageQuery = graphql`
             description
             tags
             slug
+            thumbnail {
+                childImageSharp {
+                    fluid (maxWidth:740, quality:50){
+                        src
+                        srcSet
+                        aspectRatio
+                        sizes
+                        base64
+                      }
+                }
+                publicURL
+              }
           }
         }
       }
