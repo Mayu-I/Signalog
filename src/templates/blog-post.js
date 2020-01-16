@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/Layout/layout"
 import Seo from '../components/Seo/seo'
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 import before from '../../content/assets/post_before.png'
 import after from '../../content/assets/post_after.png'
 import Profile from "../components/Profile/profile"
@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <Seo title={post.frontmatter.title}></Seo>
         <div className="post">
-          {/* <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} /> */}
+          <Img fluid={post.frontmatter.thumbnail.childImageSharp.fluid} />
           <div className="post__info">
             <p className="post__date">{post.frontmatter.date}</p>
             <div className="post__tag">{post.frontmatter.tags}</div>
@@ -75,6 +75,13 @@ export const pageQuery = graphql`
         date(formatString: "YYYY/MM/DD")
         description
         tags
+        thumbnail {
+          childImageSharp {
+            fluid(maxWidth: 740) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
