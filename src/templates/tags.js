@@ -15,7 +15,7 @@ const Tags = ({ pageContext, data }) => {
             <div className="posts">
                 <div className="posts__list">
                     {edges.map(({ node }) => {
-                        const { slug } = node.fields
+                        const { slug } = node.frontmatter
                         return (
                             <section className="posts__item" key={slug}>
                                 <Link to={`blog${slug}`} target="_blank">
