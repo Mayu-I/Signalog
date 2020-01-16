@@ -12,40 +12,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-relative-images`,
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 750,
-            },
-          },
-        ],
-      },
-    },
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-feed-mdx`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -78,6 +55,64 @@ module.exports = {
         ],
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.body }],
+                })
+              })
+            },
+            query: `
+              {
+                allMdx(
+                  limit: 1000
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                      body
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Signalog RSS Feed",
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -96,7 +131,6 @@ module.exports = {
         icon: `content/assets/signalog_icon.png`,
       },
     },
-    `gatsby-plugin-netlify-cms`,
   ],
 }
 

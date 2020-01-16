@@ -39,7 +39,7 @@ class Blog extends React.Component {
 
 export default Blog
 export const pageQuery = graphql`
-{
+query{
   site {
     siteMetadata {
       title
@@ -51,7 +51,6 @@ export const pageQuery = graphql`
         excerpt
         frontmatter {
           title
-          slug
           date(formatString: "YYYY/MM/DD")
           description
           tags

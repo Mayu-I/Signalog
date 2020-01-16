@@ -26,7 +26,6 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-                slug
                 tags
               }
             }
@@ -44,7 +43,6 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog posts pages.
     const posts = result.data.allMdx.edges
 
     posts.forEach((post, index) => {
@@ -63,7 +61,6 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     const tags = result.data.tagsGroup.group
-    // Make tag pages
     tags.forEach(tag => {
       createPage({
         path: `/${_.kebabCase(tag.fieldValue)}`,

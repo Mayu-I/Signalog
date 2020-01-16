@@ -58,20 +58,19 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-query BlogPostBySlug {
+query($slug: String!) {
   site {
     siteMetadata {
       title
       author
     }
   }
-  mdx {
+  mdx (fields: {slug: {eq: $slug}}){
     id
     excerpt(pruneLength: 130)
     body
     frontmatter {
       title
-      slug
       date(formatString: "YYYY/MM/DD")
       description
       tags
@@ -87,9 +86,6 @@ query BlogPostBySlug {
         }
         publicURL
       }
-    }
-    fields {
-      slug
     }
   }
 }

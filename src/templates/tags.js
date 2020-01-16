@@ -15,7 +15,7 @@ const Tags = ({ pageContext, data }) => {
             <div className="posts">
                 <div className="posts__list">
                     {edges.map(({ node }) => {
-                        const { slug } = node.frontmatter
+                        const { slug } = node.fields
                         return (
                             <section className="posts__item" key={slug}>
                                 <Link to={`blog${slug}`} target="_blank">
@@ -72,8 +72,6 @@ query ($tag: String) {
             date(formatString: "YYYY/MM/DD")
             title
             description
-            tags
-            slug
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 740, quality: 50) {
@@ -86,6 +84,9 @@ query ($tag: String) {
               }
               publicURL
             }
+          }
+          fields {
+            slug
           }
         }
       }
