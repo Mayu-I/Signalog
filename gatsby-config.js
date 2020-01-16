@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `シグナログ`,
-    author: `Mayu Imanaka`,
+    author: `Mayu`,
     description: ``,
     siteUrl: `https://signalog.org/`,
     social: {
@@ -9,23 +9,25 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          // gatsby-remark-relative-images must
-          // go before gatsby-remark-images
           {
             resolve: `gatsby-remark-relative-images`,
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
               maxWidth: 750,
             },
           },
@@ -44,13 +46,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -86,7 +81,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // The property ID; the tracking code won't be generated without it
         trackingId: "UA-154911145-1",
       },
     },

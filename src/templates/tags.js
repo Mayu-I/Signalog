@@ -45,6 +45,9 @@ Tags.propTypes = {
             edges: PropTypes.arrayOf(
                 PropTypes.shape({
                     node: PropTypes.shape({
+                        fields: PropTypes.shape({
+                            slug: PropTypes.string.isRequired,
+                        }),
                         frontmatter: PropTypes.shape({
                             title: PropTypes.string.isRequired,
                             tags: PropTypes.string.isRequired,
@@ -60,12 +63,8 @@ Tags.propTypes = {
 
 export default Tags
 export const pageQuery = graphql`
-  query($tag: String) {
-          allMdx(
-              limit: 2000
-              sort: {fields: [frontmatter___date], order: DESC, }
-              filter: { frontmatter: { tags: { in: [$tag] } } }
-              ) {
+query ($tag: String) {
+    allMdx(limit: 2000, sort: {fields: [frontmatter___date], order: DESC}, filter: {frontmatter: {tags: {in: [$tag]}}}) {
       totalCount
       edges {
         node {
@@ -76,20 +75,20 @@ export const pageQuery = graphql`
             tags
             slug
             thumbnail {
-                childImageSharp {
-                    fluid (maxWidth:740, quality:50){
-                        src
-                        srcSet
-                        aspectRatio
-                        sizes
-                        base64
-                      }
+              childImageSharp {
+                fluid(maxWidth: 740, quality: 50) {
+                  src
+                  srcSet
+                  aspectRatio
+                  sizes
+                  base64
                 }
-                publicURL
               }
+              publicURL
+            }
           }
         }
       }
     }
-  }
+  }  
 `

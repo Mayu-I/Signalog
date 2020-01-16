@@ -1,0 +1,153 @@
+html{
+    font-family: $text-font;
+    font-size: 62.5%;
+    color: $theme-color;
+    line-height: 1.8;
+}
+
+body{
+    font-size: 1.6rem;
+    @include sp{
+        font-size: 1.5rem;
+    }
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    color: $theme-color;
+    text-decoration: none;
+    transition: 0.4s;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+
+ul,li{
+    list-style: none;
+}
+
+h1, h2{
+    font-family: $text-font;
+}
+
+*:focus {
+    outline: none;
+  }
+
+
+
+
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 46px;
+    display: block;
+    @include pc{    
+        display: none;
+    }
+    @include tb{
+        top:42px;
+    }
+    @include sp{
+        width: 34px;
+        height: 28px;
+        top: 38px;
+        left: 27px;
+    }
+  }
+
+.bm-burger-bars {
+    background: #2f2f2f;
+    border-radius: 30px;
+    height: 4px!important;
+}
+  
+.bm-burger-bars-hover {
+    background: #2f2f2f;
+}
+
+  .bm-cross-button {
+    height: 26px;
+    width: 26px;
+  }
+
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    @include sp{
+        width: 50%!important;
+    }
+  }
+  
+  .bm-menu {
+    background: #fff;
+    padding: 2.5em 0;
+    font-size: 2.5rem;
+  }
+  
+  .bm-morph-shape {
+    fill: #fff;
+  }
+
+  .bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+
+  .bm-item {
+    display: inline-block;
+  }
+
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    top: 0;
+  }
+
+  .main{
+      @include tb{
+      padding-top: 140px;
+    }
+      @include sp{
+      padding-top: 120px;
+    }
+  }
+
+
+.page{
+    &-title{
+        font-family: $headline-font;
+        line-height: 1;
+        font-weight: 300;
+        letter-spacing: 1.8px;
+        font-size: 4rem;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        @include tb{
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+        }
+        @include sp{
+            font-size: 3rem;
+        }
+    }
+}
+
+.not{
+    @include content-wrapper;
+    margin-bottom: 50px;
+    @include spandtb{
+        @include content-wrapper--sp;
+    }
+}

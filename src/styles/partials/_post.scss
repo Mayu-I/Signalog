@@ -1,0 +1,97 @@
+.post{
+    @include content-wrapper;
+    margin-bottom: 70px;
+    @include spandtb{
+        @include content-wrapper--sp;
+    }
+    &__info{
+        display: flex;
+        margin-top: 30px;
+    }
+    &__date{
+        font-weight: 500;
+        color: #c0c0c0;
+        font-size: 1.6rem;
+        margin-right: 10px;
+    }
+    &__tag{
+        background: $bg-color;
+        color: #ffffff;
+        padding: 2px 7.5px;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    &__title{
+        margin-bottom: 30px;
+        font-size: 2.7rem;
+        @include sp{
+            line-height: 0.8;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    &__content{
+        margin-bottom: 50px;
+        a{
+            // font-weight: 500;
+            text-decoration: underline;
+        }
+        h2{
+            margin: 40px 0 20px;
+            line-height: 1.5;
+            font-size: 2.1rem;
+            border-bottom: 2px solid $theme-color;
+        }
+        pre{
+            margin: 20px 0;
+        }
+        img{
+        margin: 20px 0;
+        }
+        // ul{
+
+        // }
+    }
+    &__index{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        &Item{
+            font-size: 1.5rem;
+            font-family: $text-font;
+            @include sp{
+                font-size: 1.2rem;
+            }
+        }
+        img{
+            width: 18px;
+            padding: 0 5px;
+            @include sp{
+                width: 13px;
+            }
+        }
+    }
+    .profile{
+        width: 500px;
+        margin-top: 40px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        @include sp{
+            max-width: 100%;
+            width: 100%;
+        }
+        &Img{
+        width: 110px;
+        margin-right: auto;
+        margin-left: auto;
+        img{
+            border-radius: 50%;
+        }
+    }
+    &Desc{
+        text-align: left;
+        font-size: 1.3rem;
+    }
+    }
+}

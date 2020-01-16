@@ -1,0 +1,78 @@
+.header{
+    font-family: $headline-font;
+    position: relative;
+    background: #ffffff;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    width: 100%;
+    box-shadow: 0 5px 20px -5px rgba(0,0,0,.2);
+    padding: 10px 0;
+    @include tb{
+        padding: 15px 0;
+    }
+    @include spandtb{
+        position: fixed;
+        z-index: 99;
+    }
+    & a{
+        &:hover{
+        color: $green-color!important;
+    }
+    }
+    &__top{
+        vertical-align: top;
+    }
+    &__logo{
+        text-align: center;
+        display: block;
+        &--sp{
+            @include pc{
+            display: none;
+            }
+        }
+        svg{
+            vertical-align: bottom;
+            width: 45px;
+            height:auto;
+            @include sp{
+                width: 40px;
+            }
+        }
+    }
+    &__subnav{
+        position: absolute;
+        font-size: 2.5rem;
+        top: 5px;
+        right: 60px;
+        letter-spacing: 1px;
+        display: none;
+        @include pc{
+            display: block;
+        }
+    }
+    &__gnav{
+        display: none;
+        font-size: 2.4rem;
+        letter-spacing: 1.5px;
+        padding: 30px 0 10px;
+        @include pc{
+            display: block;
+        }
+        &List{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        @include content-wrapper;
+        @include spandtb{
+                    @include content-wrapper--sp;
+                }
+    }
+    &Item{
+        font-style: italic;
+        a{
+            outline:none;
+        }
+    }
+    }
+}

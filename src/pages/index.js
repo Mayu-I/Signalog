@@ -16,10 +16,10 @@ class Blog extends React.Component {
         <div className="posts--top posts">
           <div className="posts__list">
             {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.frontmatter.slug
+              const title = node.frontmatter.title || node.fields.slug
               return (
-                <section className="posts__item" key={node.frontmatter.slug}>
-                  <Link to={`blog${node.frontmatter.slug}`} target="_blank">
+                <section className="posts__item" key={node.fields.slug}>
+                  <Link to={`blog${node.fields.slug}`} target="_blank">
                     <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
                     <div className="posts__info">
                       <div className="posts__time">{node.frontmatter.date}</div>
@@ -39,37 +39,41 @@ class Blog extends React.Component {
 
 export default Blog
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
+{
+  site {
+    siteMetadata {
+      title
     }
-    allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            title
-            slug
-            date(formatString: "YYYY/MM/DD")
-            description
-            tags
-            thumbnail {
-              childImageSharp {
-                fluid (maxWidth:500, quality:50){
-                    src
-                    srcSet
-                    aspectRatio
-                    sizes
-                    base64
-                  }
+  }
+  allMdx(sort: {fields: [frontmatter___date], order: ASC}) {
+    edges {
+      node {
+        excerpt
+        frontmatter {
+          title
+          slug
+          date(formatString: "YYYY/MM/DD")
+          description
+          tags
+          thumbnail {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 50) {
+                src
+                srcSet
+                aspectRatio
+                sizes
+                base64
+              }
             }
-              publicURL
-            }
+            publicURL
           }
+        }
+        fields {
+          slug
         }
       }
     }
-  }  
+  }
+}
+
 `

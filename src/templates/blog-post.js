@@ -34,14 +34,14 @@ class BlogPostTemplate extends React.Component {
           <ul className="post__index">
             <li className="post__indexItem">
               {previous && (
-                <Link to={`blog${previous.frontmatter.slug}`} rel="prev">
+                <Link to={`blog${previous.fields.slug}`} rel="prev">
                   <img src={before} alt="next" />{previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li className="post__indexItem">
               {next && (
-                <Link to={`blog${next.frontmatter.slug}`} rel="next">
+                <Link to={`blog${next.fields.slug}`} rel="next">
                   {next.frontmatter.title}
                   <img src={after} alt="after" />
                 </Link>
@@ -58,36 +58,39 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    mdx {
-      id
-      excerpt(pruneLength: 130)
-      body
-      frontmatter {
-        title
-        slug
-        date(formatString: "YYYY/MM/DD")
-        description
-        tags
-        thumbnail {
-          childImageSharp {
-            fluid (maxWidth:740, quality:50){
-                src
-                srcSet
-                aspectRatio
-                sizes
-                base64
-              }
-        }
-          publicURL
-        }
-      }
+query BlogPostBySlug {
+  site {
+    siteMetadata {
+      title
+      author
     }
   }
+  mdx {
+    id
+    excerpt(pruneLength: 130)
+    body
+    frontmatter {
+      title
+      slug
+      date(formatString: "YYYY/MM/DD")
+      description
+      tags
+      thumbnail {
+        childImageSharp {
+          fluid(maxWidth: 740, quality: 50) {
+            src
+            srcSet
+            aspectRatio
+            sizes
+            base64
+          }
+        }
+        publicURL
+      }
+    }
+    fields {
+      slug
+    }
+  }
+}
 `

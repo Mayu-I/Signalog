@@ -1,0 +1,49 @@
+.about{
+    @include content-wrapper;
+    margin-bottom: 50px;
+    text-align: center;
+    @include spandtb{
+        @include content-wrapper--sp;
+    }
+&__name{
+    font-family: $headline-font;
+    font-weight: 400;
+    letter-spacing: 2.2px;
+    font-size: 3.3rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+&__desc{
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #dddddd;
+}
+p{
+    text-align: left;
+}
+}
+
+.profile{
+    width: 500px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    @include sp{
+        max-width: 100%;
+        width: 100%;
+    }
+    &Img{
+    width: 110px;
+    margin-right: auto;
+    margin-left: auto;
+    img{
+        border-radius: 50%;
+    }
+}
+&Desc{
+    text-align: left;
+    font-size: 1.3rem;
+}
+}

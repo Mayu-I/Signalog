@@ -1,0 +1,60 @@
+.footer{
+    &__wrapper{
+        background-color: $bg-color;
+        padding: 60px 0 40px;
+        color: #ffffff;
+        font-family: $headline-font;
+        font-weight: 300;  
+        @include spandtb{
+            padding: 40px 0 20px;
+        }  
+        @include sp{
+            padding: 20px 0 10px;
+        }
+    }
+    &__nav{
+        &List{
+            margin-left: 100px;
+            font-size: 3.3rem;
+            display: flex;
+            width: 350px;
+            justify-content: space-between;
+            align-items: center;
+            @include tb{
+                width: 250px;
+                margin-left: 50px;
+            }
+            @include sp{
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+        }
+        &Item{
+            & a{
+                color: #ffffff;
+                font-size: 2.3rem;
+                &:hover{
+                    color: $green-color!important;
+                }
+            }
+        }
+        &Item--forrow{
+            width: 25px;
+            @include sp{
+                width: 20px;
+            }
+        }
+    }
+    &__copy{
+        font-size: 1.5rem;
+        text-align: right;
+        margin-right: 40px;
+        color: #bcbcbc;
+        @include sp{
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+    }
+}
