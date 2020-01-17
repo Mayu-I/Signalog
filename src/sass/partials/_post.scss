@@ -39,7 +39,16 @@
             margin: 40px 0 20px;
             line-height: 1.5;
             font-size: 2.1rem;
-            border-bottom: 2px solid $theme-color;
+            border-top: 2px double $theme-color;
+            border-bottom: 2px double $theme-color;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        h3{
+            margin: 40px 0 20px;
+            line-height: 1.5;
+            font-size: 1.8rem;
+            border-bottom: 2px dashed $theme-color;
         }
         pre{
             margin: 20px 0;
@@ -47,9 +56,9 @@
         img{
         margin: 20px 0;
         }
-        // ul{
-
-        // }
+        li{
+            list-style-type: disc;
+        }
     }
     &__index{
         display: flex;

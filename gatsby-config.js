@@ -131,6 +131,7 @@ module.exports = {
         icon: `content/assets/signalog_icon.png`,
       },
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }
 

@@ -76,13 +76,12 @@ exports.createPages = ({ graphql, actions }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
   if (node.internal.type === `Mdx`) {
-    const value = createFilePath({ node, getNode })
+    const slug = createFilePath({ node, getNode, basePath: `blog` })
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: slug,
     })
   }
 }

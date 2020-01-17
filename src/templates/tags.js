@@ -50,7 +50,7 @@ Tags.propTypes = {
                         }),
                         frontmatter: PropTypes.shape({
                             title: PropTypes.string.isRequired,
-                            tags: PropTypes.string.isRequired,
+                            tags: PropTypes.array.isRequired,
                             description: PropTypes.string.isRequired,
                             slug: PropTypes.string.isRequired,
                         }),
@@ -71,6 +71,7 @@ query ($tag: String) {
           frontmatter {
             date(formatString: "YYYY/MM/DD")
             title
+            tags
             description
             thumbnail {
               childImageSharp {

@@ -12,7 +12,7 @@ class Blog extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <Seo title="index" />
+        <Seo title="Home" />
         <div className="posts--top posts">
           <div className="posts__list">
             {posts.map(({ node }) => {
@@ -45,7 +45,7 @@ query{
       title
     }
   }
-  allMdx(sort: {fields: [frontmatter___date], order: ASC}) {
+  allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
     edges {
       node {
         excerpt
