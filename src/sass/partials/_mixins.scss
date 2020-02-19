@@ -32,6 +32,12 @@ $pc: 980px;
   margin-left: auto; 
 }
 
+@mixin post-wrapper{
+  width: 680px;
+  margin-right: auto;
+  margin-left: auto; 
+}
+
 @mixin content-wrapper--sp{
   width: 100%;
   padding: 0 6vw;
