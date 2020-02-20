@@ -89,7 +89,7 @@ module.exports = {
               {
                 allMdx(
                   limit: 1000
-                  sort: { order: ASC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
                   edges {
                     node {

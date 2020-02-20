@@ -45,7 +45,7 @@ query{
       title
     }
   }
-  allMdx(sort: {fields: [frontmatter___date], order: ASC}) {
+  allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
     edges {
       node {
         excerpt

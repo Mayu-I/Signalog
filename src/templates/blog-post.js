@@ -71,7 +71,7 @@ query ($slug: String!) {
     body
     frontmatter {
       title
-      date(formatString: "YYYY/MM/DD")
+      date(formatString: "dddd DD MMMM YYYY")
       description
       tags
       thumbnail {
