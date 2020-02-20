@@ -50,14 +50,29 @@
             font-size: 1.8rem;
             border-bottom: 2px dashed $theme-color;
         }
+        h4{
+            margin: 40px 0 20px;
+        }
         pre{
             margin: 20px 0;
         }
         img{
-        margin: 20px 0;
+        padding: 20px 0;
+        }
+        .gatsby-resp-image-link{
+            margin: 20px 0;
+        }
+        ul{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            border: 2px solid $theme-color;
         }
         li{
             list-style-type: disc;
+            line-height: 2;
         }
     }
     &__index{
