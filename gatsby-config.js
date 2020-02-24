@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `シグナログ`,
-    author: `Mayu`,
+    author: `Mayu Imanaka`,
     description: ``,
     siteUrl: `https://signalog.org/`,
     social: {
